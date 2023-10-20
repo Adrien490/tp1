@@ -1,3 +1,6 @@
+- Adrien Poirier
+- Charles Agbo
+
 pour lancer l'application: 
 - npm i
 - npm run dev
