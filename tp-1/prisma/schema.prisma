@@ -1,0 +1,21 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model Task {
+  id          Int      @id @default(autoincrement()) // Identifiant unique pour la tâche
+  title       String   // Titre de la tâche
+  description String?  // Description de la tâche (facultative, peut être nulle)
+  dueDate     DateTime // Date d'échéance de la tâche
+  category    String // Relation avec le modèle de catégorie
+
+  createdAt   DateTime @default(now()) // Date de création de la tâche (générée automatiquement)
+}
